@@ -40,7 +40,7 @@ homebrew_casks:
   - 1password
   - appcleaner
   - dash
-  - firefox
+  - firefoxnightly
   - grandperspective
   - slack
   - vlc
