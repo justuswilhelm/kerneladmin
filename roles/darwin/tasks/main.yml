@@ -31,6 +31,3 @@
 
 - name: Disable mouse scaling
   command: defaults write .GlobalPreferences com.apple.mouse.scaling -1
-
-- name: Clear caches
-  script: clear_caches
