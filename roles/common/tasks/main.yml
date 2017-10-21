@@ -81,7 +81,7 @@
   file:
     src: "{{ home }}/go/src/github.com/justuswilhelm/autojump/fish/{{ item }}"
     dest: "{{ dotfiles }}/fish/functions/{{ item }}"
-    state: link
+    state: hard
   with_items:
     - "j.fish"
     - "cd.fish"
