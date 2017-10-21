@@ -1,5 +1,7 @@
 # Kernel Admin
 
+![popcorn](docs/popcorn.png)
+
 Ansible Recipe
 
 ## Requirements
