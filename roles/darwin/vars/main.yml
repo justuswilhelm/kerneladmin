@@ -5,36 +5,19 @@ homebrew_taps:
   - neovim/neovim
 
 homebrew_formulas:
-  - aria2
-  - arp-scan
-  - clang-format
-  - cloc
   - elm-format
-  - fish
   - glide
   - go
-  - graphviz
   - heroku
-  - lynis
-  - mitmproxy
-  - mobile-shell
-  - neovim
-  - nmap
   - node
-  - pandoc
   - pipeviewer
   - pkgconfig
   - postgresql
   - python
-  - python3
   - redis
-  - sqlite
   - stack
-  - swi-prolog
   - the_silver_searcher
-  - tmux
   - tmux-mem-cpu-load
-  - tree
 
 homebrew_casks:
   - 1password

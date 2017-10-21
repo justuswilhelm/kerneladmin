@@ -20,7 +20,7 @@
     name: "{{ item }}"
     update_homebrew: yes
     upgrade_all: yes
-  with_items: "{{ homebrew_formulas }}"
+  with_items: "{{ packages + homebrew_formulas }}"
 
 - name: Install Homebrew casks, ignore failures
   homebrew_cask:

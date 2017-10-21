@@ -1,0 +1,19 @@
+packages:
+  - arp-scan
+  - clang-format
+  - cloc
+  - cmake
+  - fish
+  - git
+  - graphviz
+  - htop
+  - lynis
+  - mosh
+  - neovim
+  - nmap
+  - pandoc
+  - python3
+  - swi-prolog
+  - sqlite3
+  - tmux
+  - tree
