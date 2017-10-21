@@ -1,12 +1,14 @@
 ---
 - name: Ensure Brew
-  command: brew
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
   register: brew_installed
   ignore_errors: True
 
 - name: Install Homebrew
   shell: 'yes "" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-  when: brew_installed|succeeded
+  when: brew_installed|failed
 
 - name: Homebrew taps
   homebrew_tap:
