@@ -1,6 +1,6 @@
 # Kernel Admin
 
-Ansibel Recipe
+Ansible Recipe
 
 ## Requirements
 
