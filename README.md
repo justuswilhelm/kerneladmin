@@ -13,7 +13,7 @@ Ansibel Recipe
 git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
 cd "$HOME/kerneladmin"
 printf "[debian]\nlocalhost ansible_connection=local" > hosts
-ansible-playbook site.yml -i hosts -l debian -e git_email=$YOUR_EMAIL -K
+ansible-playbook site.yml -i hosts -l debian -e git_email=$YOUR_EMAIL -kK
 ```
 
 ## Install on macOS
@@ -42,5 +42,5 @@ Then, run the following in your terminal
 git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
 cd "$HOME/kerneladmin"
 printf "[darwin]\nlocalhost ansible_connection=local" > hosts
-ansible-playbook site.yml -i hosts -l darwin -e git_email=$YOUR_EMAIL -K
+ansible-playbook site.yml -i hosts -l darwin -e git_email=$YOUR_EMAIL -kK
 ```
