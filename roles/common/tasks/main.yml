@@ -66,6 +66,11 @@
   command: git config --global user.name {{ git_name }}
   when: git_name_configured|failed
 
+- name: Copy gitignore
+  copy:
+    src: gitignore
+    dest: "{{ home }}/.gitignore"
+
 - name: Go Packages
   command: go get -u {{ item }}
   environment:
