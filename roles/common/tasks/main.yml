@@ -10,10 +10,8 @@
 - name: Ensure dotfiles exist
   shell: "test -d {{ dotfiles }}"
 
-- name: Create XDG_CONFIG_HOME
-  file:
-    dest: "{{ xdg_config_home }}"
-    state: directory
+- name: Install dotfiles
+  command: "{{ dotfiles }}/bin/install_dotfiles"
 
 - name: Create golang bin folder
   file:
@@ -31,29 +29,6 @@
   file:
     dest: "{{ home }}/.local/bin"
     state: directory
-
-- name: Symlink folders to XDG_CONFIG_HOME
-  file:
-    src: "{{ dotfiles }}/{{ item }}"
-    dest: "{{ xdg_config_home }}/{{ item }}"
-    state: link
-  with_items:
-    - fish
-    - nvim
-
-- name: Symlink tmux config
-  file:
-    src: "{{ dotfiles }}/tmux/tmux.conf"
-    dest: "{{ home }}/.tmux.conf"
-    state: hard
-
-- name: Symlink config folders
-  file:
-    src: "{{ dotfiles}}/{{ item }}"
-    dest: "{{ home }}/.{{ item }}"
-    state: link
-  with_items:
-    - httpie
 
 - name: Find out path to fish
   command: which fish
@@ -124,6 +99,3 @@
     name: "{{ item }}"
     executable: pip3
   with_items: "{{ pip3_packages }}"
-
-- name: Neovim configuration
-  command: nvim +PlugInstall +qall
