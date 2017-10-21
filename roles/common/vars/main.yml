@@ -6,7 +6,7 @@ dotfiles_repository: https://github.com/justuswilhelm/dotfiles.git
 git_config:
   push.default: simple
   core.editor: nvim
-  core.excludesfile: "{{ dotfiles }}/git/gitignore"
+  core.excludesfile: "{{ home }}/.gitignore"
   merge.conflictstyle: diff3
   user.name: Justus Perlwitz
 npm_packages:
@@ -20,3 +20,12 @@ npm_packages:
 go_packages:
   - github.com/golang/lint/golint
   - github.com/justuswilhelm/autojump
+pip2_packages:
+  - isort
+  - neovim
+pip3_packages:
+  - isort
+  - neovim
+  - pip
+  - setuptools
+  - wheel

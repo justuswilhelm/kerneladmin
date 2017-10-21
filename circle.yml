@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/.dotfiles
+    working_directory: ~/kerneladmin
     docker:
       - image: debian:stable
     steps:
@@ -10,10 +10,4 @@ jobs:
           name: "Install ansible"
           command: apt update && apt install -y ansible
       - run:
-          name: "Go to dotfiles"
-          command: cd ~/.dotfiles
-      - run:
-          name: "Add hosts file"
-          command: printf "[debian]\nlocalhost ansible_connection=local" > ansible/hosts
-      - run:
-          command: ansible-playbook ansible/site.yml -i ansible/hosts -l debian -e git_email=email@email.email
+          command: printf "[debian]\nlocalhost ansible_connection=local" > hosts && ansible-playbook site.yml -i hosts -e git_email=email@email.email
