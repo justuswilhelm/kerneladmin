@@ -10,10 +10,10 @@ Ansibel Recipe
 ## Install on fresh Debian
 
 ```
-git clone git@github.com:justuswilhelm/dotfiles "$HOME/.dotfiles"
-cd "$HOME/.dotfiles"
-printf "[debian]\nlocalhost ansible_connection=local" > ansible/hosts
-ansible-playbook ansible/site.yml -i ansible/hosts -l debian -e git_email=$YOUR_EMAIL -K
+git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
+cd "$HOME/kerneladmin"
+printf "[debian]\nlocalhost ansible_connection=local" > hosts
+ansible-playbook site.yml -i hosts -l debian -e git_email=$YOUR_EMAIL -K
 ```
 
 ## Install on macOS
@@ -29,8 +29,8 @@ brew install ansible
 Then, run the following in your terminal
 
 ```
-git clone git@github.com:justuswilhelm/dotfiles "$HOME/.dotfiles"
-cd "$HOME/.dotfiles"
-printf "[darwin]\nlocalhost ansible_connection=local" > ansible/hosts
-ansible-playbook ansible/site.yml -i ansible/hosts -l darwin -e git_email=$YOUR_EMAIL -K
+git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
+cd "$HOME/kerneladmin"
+printf "[darwin]\nlocalhost ansible_connection=local" > hosts
+ansible-playbook site.yml -i hosts -l darwin -e git_email=$YOUR_EMAIL -K
 ```
