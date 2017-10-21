@@ -69,16 +69,6 @@
   when: shell_is_fish|failed
   become: true
 
-- name: Python 2 packages
-  pip:
-    requirements: "{{ dotfiles }}/python/requirements2.txt"
-    executable: pip2
-
-- name: Python 3 packages
-  pip:
-    requirements: "{{ dotfiles }}/python/requirements.txt"
-    executable: pip3
-
 - name: Git configuration
   command: git config --global {{ item.key }} {{ item.value }}
   with_dict: "{{ git_config }}"
@@ -122,6 +112,18 @@
     global: true
   with_items: "{{ npm_packages }}"
   ignore_errors: true
+
+- name: Python 2 pip Packages
+  pip:
+    name: "{{ item }}"
+    executable: pip2
+  with_items: "{{ pip2_packages }}"
+
+- name: Python 3 pip Packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  with_items: "{{ pip3_packages }}"
 
 - name: Neovim configuration
   command: nvim +PlugInstall +qall

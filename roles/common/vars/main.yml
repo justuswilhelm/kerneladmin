@@ -20,3 +20,13 @@ npm_packages:
 go_packages:
   - github.com/golang/lint/golint
   - github.com/justuswilhelm/autojump
+pip2_packages:
+  - isort
+  - neovim
+pip3_packages:
+  - isort
+  - neovim
+  - pip
+  - setuptools
+  - wheel
+  - xattr
