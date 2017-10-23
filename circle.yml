@@ -4,6 +4,8 @@ jobs:
     working_directory: ~/kerneladmin
     docker:
       - image: debian:stable
+    environment:
+      - TERM: xterm
     steps:
       - checkout
       - run:
