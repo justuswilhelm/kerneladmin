@@ -12,4 +12,4 @@ jobs:
           name: "Install ansible"
           command: apt update && apt install -y ansible
       - run:
-          command: printf "[debian]\nlocalhost ansible_connection=local" > hosts && ansible-playbook site.yml -i hosts -e git_email=email@email.email
+          command: printf "[debian]\nlocalhost ansible_connection=local" > hosts && ansible-playbook site.yml -i hosts -e git_email=email@email.email -e git_name=foobart
