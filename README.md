@@ -12,6 +12,10 @@ Ansible Recipe
 ## Install on fresh Debian
 
 ```
+sudo apt install ansible git
+```
+
+```
 git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
 cd "$HOME/kerneladmin"
 printf "[debian]\nlocalhost ansible_connection=local" > hosts
@@ -35,6 +39,7 @@ Homebrew can be installed by running
 Ansible can be installed by running
 
 ```
+
 brew install ansible
 ```
 
