@@ -18,7 +18,6 @@ npm_packages:
   - yuglify
 go_packages:
   - github.com/golang/lint/golint
-  - github.com/justuswilhelm/autojump
 pip2_packages:
   - isort
   - neovim
