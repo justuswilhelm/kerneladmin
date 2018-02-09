@@ -23,3 +23,7 @@
     dest: /etc/udev/rules.d/70-u2f.rules
   become: true
   ignore_errors: True
+
+- name: Set gnome shell favorites
+  command: 'gsettings set org.gnome.shell favorite-apps "{{ favorite_apps|gvariant }}"'
+  ignore_errors: True
