@@ -74,6 +74,8 @@
 - name: Go Packages
   command: go get -u {{ item }}
   with_items: "{{ go_packages }}"
+  environment:
+    GOPATH: "{{ home }}/go"
 
 - name: NPM configuration
   npm:
