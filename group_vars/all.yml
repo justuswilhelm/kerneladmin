@@ -13,7 +13,8 @@ packages:
   - nmap
   - pandoc
   - python3
-  - swi-prolog
   - sqlite3
+  - swi-prolog
+  - timelimit
   - tmux
   - tree

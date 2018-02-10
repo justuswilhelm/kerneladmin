@@ -16,7 +16,7 @@ sudo apt install ansible git
 ```
 
 ```
-git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
+git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
 cd "$HOME/kerneladmin"
 printf "[debian]\nlocalhost ansible_connection=local" > hosts
 ansible-playbook site.yml -i hosts -l debian -e git_email=$YOUR_EMAIL -kK
@@ -46,7 +46,7 @@ brew install ansible
 Then, run the following in your terminal
 
 ```
-git clone git@github.com:justuswilhelm/kerneladmin "$HOME/kerneladmin"
+git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
 cd "$HOME/kerneladmin"
 printf "[darwin]\nlocalhost ansible_connection=local" > hosts
 ansible-playbook site.yml -i hosts -l darwin -e git_email=$YOUR_EMAIL -kK
