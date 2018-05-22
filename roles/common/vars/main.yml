@@ -8,14 +8,6 @@ git_config:
   core.editor: nvim
   core.excludesfile: "{{ home }}/.gitignore"
   merge.conflictstyle: diff3
-npm_packages:
-  - bower
-  - elm
-  - elm-test
-  - eslint
-  - less
-  - lesshint
-  - yuglify
 go_packages:
   - github.com/golang/lint/golint
 pip2_packages:
