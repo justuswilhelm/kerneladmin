@@ -17,6 +17,5 @@ pip2_packages:
 pip3_packages:
   - isort
   - neovim
-  - pip
   - setuptools
   - wheel
