@@ -8,6 +8,7 @@ git_config:
   core.editor: nvim
   core.excludesfile: "{{ home }}/.gitignore"
   merge.conflictstyle: diff3
+  rebase.autoStash: true
 go_packages:
   - github.com/golang/lint/golint
 pip2_packages:
