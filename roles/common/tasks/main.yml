@@ -77,13 +77,6 @@
   environment:
     GOPATH: "{{ home }}/go"
 
-- name: NPM configuration
-  npm:
-    name: "{{ item }}"
-    global: true
-  with_items: "{{ npm_packages }}"
-  ignore_errors: true
-
 - name: Python 2 pip Packages
   pip:
     name: "{{ item }}"
