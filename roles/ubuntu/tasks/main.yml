@@ -1,0 +1,12 @@
+- name: Perform dist upgrade
+  apt:
+    upgrade: dist
+    update_cache: yes
+  become: true
+
+- name: Install apt packages
+  apt:
+    pkg: "{{ item }}"
+    state: installed
+  become: true
+  with_items: "{{ packages + apt_packages }}"

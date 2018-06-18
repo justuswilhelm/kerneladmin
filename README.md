@@ -19,7 +19,20 @@ sudo apt install ansible git
 git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
 cd "$HOME/kerneladmin"
 printf "[debian]\nlocalhost ansible_connection=local" > hosts
-ansible-playbook site.yml -i hosts -l debian -e git_email=$YOUR_EMAIL -kK
+ansible-playbook site.yml -i hosts -l debian -e git_email=$YOUR_EMAIL -e git_name="$YOUR $NAME| -kK
+```
+
+## Install on fresh Ubuntu
+
+```
+sudo apt install ansible git
+```
+
+```
+git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
+cd "$HOME/kerneladmin"
+printf "[ubuntu]\nlocalhost ansible_connection=local" > hosts
+ansible-playbook site.yml -i hosts -l ubuntu -e git_email=$YOUR_EMAIL -e git_name="$YOUR $NAME| -kK
 ```
 
 ## Install on macOS
