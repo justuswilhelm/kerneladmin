@@ -8,3 +8,8 @@
   roles:
     - debian
     - common
+
+- hosts: ubuntu
+  roles:
+    - ubuntu
+    - common
