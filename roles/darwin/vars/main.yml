@@ -1,5 +1,4 @@
 homebrew_taps:
-  - caskroom/cask
   - homebrew/core
   - homebrew/services
   - neovim/neovim
