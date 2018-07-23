@@ -20,8 +20,9 @@ sudo apt install ansible git
 ### Installing Kernel Admin
 
 ```
-env OS=debian bash << EOF
+(
 set -ue
+OS=debian
 git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin" || echo "Already cloned"
 cd "$HOME/kerneladmin"
 printf "[$OS]\nlocalhost ansible_connection=local" > hosts
@@ -31,7 +32,7 @@ ansible-playbook site.yml -i hosts -kK \
     -l $OS \
     -e git_email="$YOUR_GIT_EMAIL" \
     -e git_name="$YOUR_GIT_NAME"
-EOF
+)
 ```
 
 ## Install on fresh Ubuntu
@@ -45,8 +46,9 @@ sudo apt install ansible git
 ### Installing Kernel Admin
 
 ```
-env OS=ubuntu bash << EOF
+(
 set -ue
+OS=ubuntu
 git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin" || echo "Already cloned"
 cd "$HOME/kerneladmin"
 printf "[$OS]\nlocalhost ansible_connection=local" > hosts
@@ -56,7 +58,7 @@ ansible-playbook site.yml -i hosts -kK \
     -l $OS \
     -e git_email="$YOUR_GIT_EMAIL" \
     -e git_name="$YOUR_GIT_NAME"
-EOF
+)
 ```
 
 ## Install on macOS
@@ -91,8 +93,9 @@ sudo xcodebuild -license accept
 Then, run the following in your terminal
 
 ```
-env OS=darwin bash << EOF
+(
 set -ue
+OS=ubuntu
 git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin" || echo "Already cloned"
 cd "$HOME/kerneladmin"
 printf "[$OS]\nlocalhost ansible_connection=local" > hosts
@@ -102,5 +105,5 @@ ansible-playbook site.yml -i hosts -kK \
     -l $OS \
     -e git_email="$YOUR_GIT_EMAIL" \
     -e git_name="$YOUR_GIT_NAME"
-EOF
+)
 ```
