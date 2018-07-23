@@ -107,3 +107,11 @@ ansible-playbook site.yml -i hosts -kK \
     -e git_name="$YOUR_GIT_NAME"
 )
 ```
+
+## Rerun Installation
+
+Rerun the installation anytime after that by just typing
+
+```
+ansible-playbook $HOME/kerneladmin/site.yml -i $HOME/kerneladmin/hosts -kK
+```
