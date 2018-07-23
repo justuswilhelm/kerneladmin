@@ -11,38 +11,52 @@ Ansible Recipe
 
 ## Install on fresh Debian
 
+### Installing Requirements
+
 ```
 sudo apt install ansible git
 ```
 
+### Installing Kernel Admin
+
 ```
-git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
+env OS=debian bash << EOF
+set -ue
+git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin" || echo "Already cloned"
 cd "$HOME/kerneladmin"
-printf "[debian]\nlocalhost ansible_connection=local" > hosts
-read YOUR_NAME
-read YOUR_EMAIL
+printf "[$OS]\nlocalhost ansible_connection=local" > hosts
+read -p "Git Username> " YOUR_GIT_NAME
+read -p "Git Email> " YOUR_GIT_EMAIL
 ansible-playbook site.yml -i hosts -kK \
-    -l debian \
-    -e git_email="$YOUR_EMAIL" \
-    -e git_name="$YOUR_NAME"
+    -l $OS \
+    -e git_email="$YOUR_GIT_EMAIL" \
+    -e git_name="$YOUR_GIT_NAME"
+EOF
 ```
 
 ## Install on fresh Ubuntu
 
+### Installing Requirements
+
 ```
 sudo apt install ansible git
 ```
 
+### Installing Kernel Admin
+
 ```
-git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
+env OS=ubuntu bash << EOF
+set -ue
+git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin" || echo "Already cloned"
 cd "$HOME/kerneladmin"
-printf "[ubuntu]\nlocalhost ansible_connection=local" > hosts
-read YOUR_NAME
-read YOUR_EMAIL
+printf "[$OS]\nlocalhost ansible_connection=local" > hosts
+read -p "Git Username> " YOUR_GIT_NAME
+read -p "Git Email> " YOUR_GIT_EMAIL
 ansible-playbook site.yml -i hosts -kK \
-    -l debian \
-    -e git_email="$YOUR_EMAIL" \
-    -e git_name="$YOUR_NAME"
+    -l $OS \
+    -e git_email="$YOUR_GIT_EMAIL" \
+    -e git_name="$YOUR_GIT_NAME"
+EOF
 ```
 
 ## Install on macOS
@@ -72,16 +86,21 @@ Having trouble with XCode? Run this in your Terminal:
 sudo xcodebuild -license accept
 ```
 
+### Installing Kernel Admin
+
 Then, run the following in your terminal
 
 ```
-git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin"
+env OS=darwin bash << EOF
+set -ue
+git clone https://github.com/justuswilhelm/kerneladmin.git "$HOME/kerneladmin" || echo "Already cloned"
 cd "$HOME/kerneladmin"
-printf "[darwin]\nlocalhost ansible_connection=local" > hosts
-read YOUR_NAME
-read YOUR_EMAIL
+printf "[$OS]\nlocalhost ansible_connection=local" > hosts
+read -p "Git Username> " YOUR_GIT_NAME
+read -p "Git Email> " YOUR_GIT_EMAIL
 ansible-playbook site.yml -i hosts -kK \
-    -l darwin \
-    -e git_email="$YOUR_EMAIL" \
-    -e git_name="$YOUR_NAME"
+    -l $OS \
+    -e git_email="$YOUR_GIT_EMAIL" \
+    -e git_name="$YOUR_GIT_NAME"
+EOF
 ```
