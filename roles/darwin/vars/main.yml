@@ -4,10 +4,8 @@ homebrew_taps:
   - neovim/neovim
 
 homebrew_formulas:
-  - elm-format
   - glide
   - go
-  - heroku
   - node
   - pipeviewer
   - pkgconfig
