@@ -24,8 +24,6 @@ homebrew_casks:
   - dash
   - firefoxnightly
   - grandperspective
-  - slack
-  - vlc
   - wireshark
   - yubico-authenticator
   - yubikey-personalization-gui
