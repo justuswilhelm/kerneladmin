@@ -8,7 +8,7 @@
 
 - name: Install Homebrew
   shell: 'yes "" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-  when: brew_installed|failed
+  when: brew_installed is failed
 
 - name: Homebrew taps
   homebrew_tap:
