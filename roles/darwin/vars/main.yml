@@ -1,14 +1,11 @@
 homebrew_taps:
-  - caskroom/cask
   - homebrew/core
   - homebrew/services
   - neovim/neovim
 
 homebrew_formulas:
-  - elm-format
   - glide
   - go
-  - heroku
   - node
   - pipeviewer
   - pkgconfig
@@ -25,8 +22,6 @@ homebrew_casks:
   - dash
   - firefoxnightly
   - grandperspective
-  - slack
-  - vlc
   - wireshark
   - yubico-authenticator
   - yubikey-personalization-gui

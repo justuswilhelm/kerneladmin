@@ -41,7 +41,7 @@
 
 - name: Change shell to fish
   command: "chsh -s {{ which_fish.stdout }} {{ ansible_user }}"
-  when: shell_is_fish|failed
+  when: shell_is_fish is failed
   become: true
 
 - name: Git configuration
@@ -60,11 +60,11 @@
 
 - name: Configure git email
   command: git config --global user.email {{ git_email }}
-  when: git_email_configured|failed
+  when: git_email_configured is failed
 
 - name: Configure git name
   command: git config --global user.name {{ git_name }}
-  when: git_name_configured|failed
+  when: git_name_configured is failed
 
 - name: Copy gitignore
   copy:
