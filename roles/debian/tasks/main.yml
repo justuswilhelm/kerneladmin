@@ -12,10 +12,9 @@
 
 - name: Install apt packages
   apt:
-    pkg: "{{ item }}"
-    state: installed
+    pkg: "{{ packages + apt_packages }}"
+    state: present
   become: true
-  with_items: "{{ packages + apt_packages }}"
 
 - name: Copy udev rules
   copy:
